@@ -5,30 +5,30 @@ using namespace std;
 bool executando = true;
 
 // esse array reprenta o tabuleiro
-char table[9] = {'X','X','O','X',0,0,0,0,'O'};
+char board[9] = {'X','X','O','X',0,0,0,0,'O'};
 
 // essa função reseta o jogo
 void ResetGame()
 {
-	for(int i = 0; i < table[i]; i++)
+	for(int i = 0; i < 9; i++)
 	{
-		table[i] = 0;
+		board[i] = 0;
 	}
 }
 
 // use essa função pra desenhar o tabuleiro na tela
-void DrawTable()
+void Drawboard()
 {
 	for(int i = 0; i < 9; i++)
 	{
-		// se i for divisíveis por 3
+		// se i for divisível por 3
 		if(i % 3 == 0)
 		{
 			cout << endl; // pula linha
 		}
 		
-		// se dentro do array table tiver o valor 0
-		if(table[i] == 0)
+		// se dentro do array board tiver o valor 0
+		if(board[i] == 0)
 		{
 			cout << i << " "; // mostra o número i
 		}
@@ -36,7 +36,7 @@ void DrawTable()
 		// senão
 		else
 		{
-			cout << table[i] << " "; // mostra o caractere
+			cout << board[i] << " "; // mostra o caractere
 		}
 	}
 }
@@ -52,7 +52,7 @@ int lixo;
 while(executando)
 {
 	
-	DrawTable();
+	Drawboard();
 	cout << endl;
 	cout << "digite um valor inútil pra sair do game loop: ";
 	cin >> lixo;
