@@ -33,6 +33,35 @@ void ResetGame()
 	round = 0;
 }
 
+// essa função desacelera o tempo
+void Sleep(int timer)
+{
+	while(timer < 100000000)
+	{
+		timer++;
+	}
+}
+
+// essa função mostra o texto com efeito de escrever
+void TypingEffect(string text, int delay)
+{
+	 for(int index = 0; index < text.size(); index++)
+     {
+          Sleep(delay);
+          cout << text[index];
+     }
+}
+
+
+// essa função desenha a tela de boas vindas
+void Welcome()
+{
+	TypingEffect("Seja Bem vindo ao jogo da velha!", 5);
+	estado = TURN_X;
+	return;	
+}
+
+
 // essa função verifica se o 'X' ganhou
 void checkXWin()
 {
@@ -301,6 +330,9 @@ void RunGame()
 int main()
 {
 setlocale(LC_ALL, "portuguese");
+
+
+Welcome();
 
 ResetGame();
 
