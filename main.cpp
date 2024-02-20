@@ -33,7 +33,7 @@ void ResetGame()
 	round = 0;
 }
 
-// essa função verifica se o x ganhou
+// essa função verifica se o 'X' ganhou
 void checkXWin()
 {
 	if(board[0] == 'X' && board[1] == 'X' && board[2] == 'X')
@@ -87,7 +87,7 @@ void checkXWin()
 }
 
 
-// essa função verifica se o o ganhou
+// essa função verifica se o 'O' ganhou
 void checkOWin()
 {
 	if(board[0] == 'O' && board[1] == 'O' && board[2] == 'O')
@@ -166,7 +166,7 @@ void Drawboard()
 }
 
 
-// use essa função pra coloca 'X' no tabuleiro
+// use essa função pra colocar 'X' no tabuleiro
 void PUT_X()
 {
 	cout << endl;
@@ -198,7 +198,7 @@ void PUT_X()
 }
 
 
-// use essa função coloca 'O' no tabuleiro
+// use essa função colocar 'O' no tabuleiro
 void PUT_O()
 {
 	cout << endl;
@@ -252,9 +252,9 @@ void DrawTie()
 
 
 // essa função verifica se teve empate
-void CheckTie()
+void checkTie()
 {
-	if(round >= 9)
+	if(round >= 9 && estado != X_WIN && estado != O_WIN)
 	{
 		estado = TIE;
 	}
@@ -307,8 +307,8 @@ while(executando)
 {
 	checkXWin();
 	checkOWin();
+	checkTie();
 	Drawboard();
-	CheckTie();
 	RunGame();
 }
 
