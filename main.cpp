@@ -11,8 +11,8 @@ enum state
 	TIE,
 };
 
-int estado = TURN_X;
-int round = 0;
+int estado = TURN_X; // a variável estado muda a tela do jogo
+int round = 0; // essa variável serve pra lógica de empate
 
 string status;
 
@@ -198,7 +198,7 @@ void PUT_X()
 }
 
 
-// use essa função colocar 'O' no tabuleiro
+// use essa função pra colocar 'O' no tabuleiro
 void PUT_O()
 {
 	cout << endl;
@@ -229,6 +229,7 @@ void PUT_O()
 	}
 }
 
+// essa função desenha o empate
 void DrawTie()
 {
 	cout << endl;
@@ -260,6 +261,7 @@ void checkTie()
 	}
 }
 
+// essa função desenha a tela de vitória
 void DrawWin()
 {
 	cout << endl;
